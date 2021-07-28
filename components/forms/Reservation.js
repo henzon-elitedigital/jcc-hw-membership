@@ -125,7 +125,6 @@ export default function Reservation(props) {
               ref={PhoneRef}
               type="email"
               className="bg-grayish-2 border-1 border-grayish-1 rounded py-3 px-4"
-              placeholder="XXX-XXX-XXXX"
               maxLength="12"
               onKeyPress={isNumber}
               onPaste={isNumber}

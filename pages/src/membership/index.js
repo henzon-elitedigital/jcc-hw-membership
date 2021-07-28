@@ -19,9 +19,7 @@ export default function Homepage() {
         <title>JCC Membership | Schwartz/Reisman Centre</title>
         <meta
           name="description"
-          content="With a Schwartz/Reisman JCC membership, gain access to a revolutionary
-          gym, pools, exciting programming, and so much more. Join
-          Schwartz/Reisman JCC today."
+          content="With a Schwartz/Reisman JCC membership, gain access to a revolutionary gym, pools, exciting programming, and so much more. Join Schwartz/Reisman JCC today."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -34,7 +32,8 @@ export default function Homepage() {
         <div>
           <h1 className="text-22px lg:text-56px text-center text-grayish-1">
             <span className="font-medium">
-              THE SCHWARTZ/ <br className="block lg:hidden" />
+              THE SCHWARTZ/
+              <br className="block lg:hidden" />
               REISMAN CENTRE{" "}
             </span>
             JCC!
@@ -53,12 +52,28 @@ export default function Homepage() {
           </div>
         </div>
 
-        <div className="-mt-1">
+        <div className="relative -mt-1">
           <img className="hidden lg:block" src="/images/SRC-POSS.png" />
           <img className="block lg:hidden" src="/images/SRC_POSS-mob.png" />
+
+          <div className="relative lg:absolute bottom-95px lg:-bottom-20px left-45px lg:left-50px w-280px lg:w-full">
+            <img className="w-279px lg:w-650px" src="/images/trape.png" />
+            <div className="absolute top-23px lg:top-24 text-14px lg:text-24px text-white text-center w-255px lg:w-370px left-15px lg:left-125px">
+              <h2 className="font-bold text-18px lg:text-36px mb-2 lg:mb-5">Sign up today</h2>
+              <p className="mb-5 lg:mb-8">
+                Learn more about becoming a member and our special offers
+              </p>
+              <a
+                href="#reserve_sec"
+                className="border-2 border-white py-2 lg:py-3 px-8 lg:px-10 rounded-lg"
+              >
+                Join the JCC Family
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="w-full">
+        <div className="w-full -mt-65px lg:mt-0">
           <div className="flex flex-col lg:flex-row">
             <div className="w-full lg:w-1/2">
               <img
@@ -227,7 +242,7 @@ export default function Homepage() {
                 <span className="font-bold"> access card with lanyard</span>
               </li>
               <li className="pl-45px lg:pl-55px min-h-50px pt-5 lg:pt-0">
-                <h3 className="text-20px">And so much more!</h3>
+                <h3 className="text-26px">And so much more!</h3>
               </li>
             </ul>
           </div>
@@ -270,7 +285,7 @@ export default function Homepage() {
               Find out more about membership benefits, fitness facilities, the
               JCC community and everything else you and your family will love
               about the Schwartz/Reisman Centre. Because it’s time to get back
-              to what really matters; It’s Time for Together.
+              to what really matters; <strong>It’s Time for Together</strong>.
             </p>
           </div>
 
