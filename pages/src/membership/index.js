@@ -56,7 +56,7 @@ export default function Homepage() {
           <img className="hidden lg:block" src="/images/SRC-POSS.png" />
           <img className="block lg:hidden" src="/images/SRC_POSS-mob.png" />
 
-          <div className="relative lg:absolute bottom-95px lg:-bottom-20px left-45px lg:left-50px w-280px lg:w-full">
+          <div className="relative lg:absolute bottom-95px lg:-bottom-20px left-45px lg:left-50px w-280px lg:w-1/2">
             <img className="w-279px lg:w-650px" src="/images/trape.png" />
             <div className="absolute top-23px lg:top-24 text-14px lg:text-24px text-white text-center w-255px lg:w-370px left-15px lg:left-125px">
               <h2 className="font-bold text-18px lg:text-36px mb-2 lg:mb-5">Sign up today</h2>
