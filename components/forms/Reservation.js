@@ -1,15 +1,23 @@
 import { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Reservation(props) {
   const NameRef = useRef();
   const EmailRef = useRef();
   const PhoneRef = useRef();
+  const [DisableForm, setDisableForm] = useState(false);
+
+  const recaptchaRef = useRef();
 
   const [NameError, setNameError] = useState("");
   const [EmailError, setEmailError] = useState("");
   const [PhoneError, setPhoneError] = useState("");
 
   function onFormSubmit() {
+    props.onClick();
+
+    setDisableForm(true);
+
     setNameError("");
     setEmailError("");
     setPhoneError("");
@@ -19,10 +27,10 @@ export default function Reservation(props) {
     const phone = PhoneRef.current.value;
 
     const registrationData = {
-      name: name,
+      fullname: name,
       email: email,
       phone: phone,
-      regSrc: props.registrationFrom,
+      reference: props.registrationFrom,
     };
 
     if (name === "") {
@@ -35,21 +43,55 @@ export default function Reservation(props) {
           setEmailError("Please enter a valid email");
         } else {
           addRegistration(registrationData);
+
+          var urlencoded = new URLSearchParams();
+          var requestOptions = {
+            method: "POST",
+            body: urlencoded,
+            redirect: "follow",
+          };
+
           fetch(
-            "https://jcc-membership-default-rtdb.firebaseio.com/registrations.json",
-            {
-              method: "POST",
-              body: JSON.stringify(registrationData),
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          ).then(() => {
-            NameRef.current.value = "";
-            EmailRef.current.value = "";
-            PhoneRef.current.value = "";
-            props.onSuccessReservation();
-          });
+            "https://join.srcentre.ca/api/src-membership?fullname=" +
+              name +
+              "&email=" +
+              email +
+              "&phone=" +
+              phone +
+              "&reference=" +
+              props.registrationFrom,
+            requestOptions
+          )
+            //.then((response) => response.text())
+            .then((result) => {
+              console.log(result.status === 200);
+              if (result.status === 200) {
+                NameRef.current.value = "";
+                EmailRef.current.value = "";
+                PhoneRef.current.value = "";
+                props.onSuccessReservation();
+                setDisableForm(false);
+              }
+            })
+            .catch((error) => console.log("error", error));
+
+          //   FIREBASE
+          //   fetch(
+          //     // "https://jcc-membership-default-rtdb.firebaseio.com/registrations.json"
+          //     "localhost:8000/api/src-membership?fullname=girl&email=henzon@verg.com",
+          //     {
+          //       method: "POST",
+          //       body: new URLSearchParams(),
+          //     //   headers: {
+          //     //     // "Content-Type": "application/json",
+          //     //   },
+          //     }
+          //   ).then(() => {
+          //     NameRef.current.value = "";
+          //     EmailRef.current.value = "";
+          //     PhoneRef.current.value = "";
+          //     props.onSuccessReservation();
+          //   });
         }
       }
     }
@@ -91,7 +133,7 @@ export default function Reservation(props) {
     return false;
   }
 
-  function formatPhoneNumber(inp) {}
+  function onReCAPTCHAChange() {}
 
   return (
     <form className="max-w-1530px mx-auto mt-5 lg:mt-14" id="reserve_form">
@@ -103,6 +145,7 @@ export default function Reservation(props) {
               ref={NameRef}
               type="text"
               className="bg-grayish-2 border-1 border-grayish-1 rounded py-3 px-4"
+              disabled={DisableForm}
             />
             <div className="text-red-700 text-center">{NameError}&nbsp;</div>
           </div>
@@ -114,6 +157,7 @@ export default function Reservation(props) {
               ref={EmailRef}
               type="email"
               className="bg-grayish-2 border-1 border-grayish-1 rounded py-3 px-4"
+              disabled={DisableForm}
             />
             <div className="text-red-700 text-center">{EmailError}&nbsp;</div>
           </div>
@@ -125,6 +169,7 @@ export default function Reservation(props) {
               ref={PhoneRef}
               type="email"
               className="bg-grayish-2 border-1 border-grayish-1 rounded py-3 px-4"
+              disabled={DisableForm}
               maxLength="12"
               onKeyPress={isNumber}
               onPaste={isNumber}
@@ -133,14 +178,22 @@ export default function Reservation(props) {
           </div>
         </div>
       </div>
+      <div className="flex justify-center items-center">
+        {/* <ReCAPTCHA
+          ref={recaptchaRef}
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+          onChange={onReCAPTCHAChange}
+        /> */}
+      </div>
       <div className="my-16 lg:my-24 px-2">
-        <a
+        <button
+          disabled={DisableForm}
           onClick={onFormSubmit}
           href="#reserve_form"
           className="text-18px lg:text-29px bg-blueish-1 rounded text-white px-12 py-4 w-full lg:w-max block lg:inline text-center"
         >
           {props.btnText}
-        </a>
+        </button>
       </div>
     </form>
   );

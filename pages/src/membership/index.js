@@ -8,9 +8,16 @@ import { useState } from "react";
 
 export default function Homepage() {
   const [IsReserved, setIsReserved] = useState(false);
+  const [IsLoading, setIsLoading] = useState(false);
+
+  function showLoading() {
+    setIsLoading(true);
+    setIsReserved(false);
+  }
 
   function showSuccessMessage() {
     setIsReserved(true);
+    setIsLoading(false);
   }
 
   return (
@@ -59,7 +66,9 @@ export default function Homepage() {
           <div className="relative lg:absolute bottom-95px lg:-bottom-20px left-45px lg:left-50px w-280px lg:w-1/2">
             <img className="w-279px lg:w-650px" src="/images/trape.png" />
             <div className="absolute top-23px lg:top-24 text-14px lg:text-24px text-white text-center w-255px lg:w-370px left-15px lg:left-125px">
-              <h2 className="font-bold text-18px lg:text-36px mb-2 lg:mb-5">Sign up today</h2>
+              <h2 className="font-bold text-18px lg:text-36px mb-2 lg:mb-5">
+                Sign up today
+              </h2>
               <p className="mb-5 lg:mb-8">
                 Learn more about becoming a member and our special offers
               </p>
@@ -253,7 +262,7 @@ export default function Homepage() {
           className="lg:block relative z-10 text-left lg:text-center pt-24 px-5 lg:px-3.5 pb-14 -mt-24 bg-no-repeat bg-20p bg-center bg-left"
         >
           <img
-            className="hidden lg:block absolute left-0 top-131px w-400px"
+            className="hidden lg:block absolute left-0 top-131px w-400px -z-1"
             src="/images/red_shape.png"
           />
           <img
@@ -292,10 +301,14 @@ export default function Homepage() {
           <br />
           <Reservation
             onSuccessReservation={showSuccessMessage}
+            onClick={showLoading}
             btnText="Join the JCC Family"
             registrationFrom="src"
           />
 
+          {(!IsReserved && IsLoading) && (
+            <img src="/images/spinner.gif" className="mx-auto mb-5 w-10" />
+          )}
           {IsReserved && (
             <div className="w-full lg:w-955px text-36px leading-30px tracking-0.15px mx-auto text-blueish-1 mb-16 text-center">
               <h2>Thank You!</h2>

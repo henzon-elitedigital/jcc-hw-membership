@@ -133,6 +133,9 @@ module.exports = {
       skew: {
         "-5deg": "-5deg",
       },
+      zIndex: {
+          "-1": "-1"
+      }
     },
   },
   variants: {
