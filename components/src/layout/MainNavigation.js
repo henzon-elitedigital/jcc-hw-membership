@@ -12,12 +12,12 @@ export default function MainNavigation() {
         <div className="text-left ml-auto flex lg:flex-grow-0 flex-grow lg:justify-center justify-end items-center">
           <ul className="flex flex-row">
             <li className="px-2">
-              <a>
+              <a href="https://www.facebook.com/schwartzreismancentre/">
                 <img className="w-36px lg:w-42px h-36px lg:h-42px" src="/images/facebook.png"></img>
               </a>
             </li>
             <li className="px-2">
-              <a>
+              <a href="https://www.instagram.com/jcctoronto/">
                 <img className="w-36px lg:w-42px h-36px lg:h-42px" src="/images/instagram.png"></img>
               </a>
             </li>

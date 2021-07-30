@@ -42,13 +42,13 @@ export default function Footer() {
             <a href="https://www.facebook.com/theprossermanjcc/">
               <img className="max-h-10 px-2" src="/images/SRC-LOGO.png" />
             </a>
-            <a href="https://www.facebook.com/theprossermanjcc/">
+            <a href="https://www.facebook.com/schwartzreismancentre/">
               <img
                 className="max-h-10 px-2"
                 src="https://join.prossermanjcc.com/custom/pjcc-reserve-spot/images/facebook.png"
               />
             </a>
-            <a href="https://www.instagram.com/prossermanjcc/">
+            <a href="https://www.instagram.com/jcctoronto/">
               <img
                 className="max-h-10 px-2"
                 src="https://join.prossermanjcc.com/custom/pjcc-reserve-spot/images/instagram.png"
