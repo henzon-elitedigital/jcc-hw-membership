@@ -4,11 +4,14 @@ import MainNavigation from "../../../components/src/layout/MainNavigation";
 import Hero from "../../../components/src/layout/Hero";
 import Footer from "../../../components/src/layout/Footer";
 import Reservation from "../../../components/forms/Reservation";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import StickySignup from "../../../components/pjcc/layout/StickySignup";
 
 export default function Homepage() {
   const [IsReserved, setIsReserved] = useState(false);
   const [IsLoading, setIsLoading] = useState(false);
+  const [ShowSticky, setShowSticky] = useState(true);
+  const MyReservation = useRef();
 
   function showLoading() {
     setIsLoading(true);
@@ -19,6 +22,25 @@ export default function Homepage() {
     setIsReserved(true);
     setIsLoading(false);
   }
+
+  function isInViewport() {
+    const [isIntersecting, setIntersecting] = useState(false);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(([entry]) =>
+        setShowSticky(entry.isIntersecting)
+      );
+      observer.observe(MyReservation.current);
+      // Remove the observer as soon as the component is unmounted
+      return () => {
+        observer.disconnect();
+      };
+    }, []);
+    console.log(ShowSticky);
+    return isIntersecting;
+  }
+
+  isInViewport(MyReservation);
 
   return (
     <>
@@ -213,7 +235,7 @@ export default function Homepage() {
                 }}
               >
                 Program schedule of
-                <span className="font-bold"> over 150 weekly classes</span>
+                <span className="font-bold"> over 100 classes per week</span>
               </li>
               <li
                 className="bg-no-repeat bg-27px lg:bg-42px pl-45px lg:pl-55px min-h-50px"
@@ -299,14 +321,17 @@ export default function Homepage() {
           </div>
 
           <br />
-          <Reservation
-            onSuccessReservation={showSuccessMessage}
-            onClick={showLoading}
-            btnText="Join the JCC Family"
-            registrationFrom="src"
-          />
 
-          {(!IsReserved && IsLoading) && (
+          <div ref={MyReservation}>
+            <Reservation
+              onSuccessReservation={showSuccessMessage}
+              onClick={showLoading}
+              btnText="Join the JCC Family"
+              registrationFrom="src"
+            />
+          </div>
+
+          {!IsReserved && IsLoading && (
             <img src="/images/spinner.gif" className="mx-auto mb-5 w-10" />
           )}
           {IsReserved && (
@@ -362,6 +387,8 @@ export default function Homepage() {
           />
         </div>
       </main>
+
+      {!ShowSticky && <StickySignup />}
 
       <Footer />
     </>
