@@ -75,7 +75,7 @@ export default function Homepage() {
             className="block lg:hidden -mt-16"
             src="/images/Rectangle-mob.png"
           />
-          <div className="absolute w-full mx-auto top-10 lg:top-36 mt-0 lg:-mt-76px transform skew-y-0 lg:-skew-y-1 text-white">
+          <div className="absolute w-full mx-auto top-10 lg:top-36 mt-0 lg:-mt-103px 2xl:-mt-76px transform skew-y-0 lg:-skew-y-1 text-white">
             Exclusive Offer: <br className="block lg:hidden" />
             10 Day Free Trial*
           </div>
@@ -85,7 +85,7 @@ export default function Homepage() {
           <img className="hidden lg:block" src="/images/SRC-POSS.png" />
           <img className="block lg:hidden" src="/images/SRC_POSS-mob.png" />
 
-          <div className="relative lg:absolute bottom-95px lg:-bottom-20px left-45px lg:left-50px w-280px lg:w-1/2">
+          <div className="relative lg:absolute bottom-95px lg:-bottom-20px left-45px lg:left-20px 2xl:left-50px w-280px lg:w-1/2">
             <img className="w-279px lg:w-650px" src="/images/trape.png" />
             <div className="absolute top-23px lg:top-24 text-14px lg:text-24px text-white text-center w-255px lg:w-370px left-15px lg:left-125px">
               <h2 className="font-bold text-18px lg:text-36px mb-2 lg:mb-5">
@@ -116,8 +116,8 @@ export default function Homepage() {
                 src="/images/family-mob.png"
               />
             </div>
-            <div className="block lg:flex w-full lg:w-1/2 flex-col justify-center px-5 lg:pl-10 -mt-60px lg:mt-0 z-10">
-              <h2 className="text-24px lg:text-36px font-medium text-center lg:text-left leading-tight ml-0 lg:-ml-50px mb-7">
+            <div className="block lg:flex w-full lg:w-1/2 flex-col justify-center px-5 lg:pl-10 -mt-60px lg:-mt-55px 2xl:mt-0 z-10">
+              <h2 className="text-24px lg:text-36px font-medium text-center lg:text-left leading-tight lg:leading-41px 2xl:leading-tight ml-0 lg:-ml-50px mb-7 lg:mb-3 2xl:mb-7">
                 Welcome to the Schwartz/
                 <br />
                 Reisman Centre JCC <br />
@@ -127,7 +127,7 @@ export default function Homepage() {
                 </span>
               </h2>
               <div>
-                <ul className="list-disc pl-5 lg:pl-10 text-14px lg:text-18px tracking-0.35px leading-22px lg:leading-10 w-full lg:w-500px">
+                <ul className="list-disc pl-5 lg:pl-10 text-14px lg:text-18px tracking-0.35px leading-22px lg:leading-30px 2xl:leading-10 w-full lg:w-500px">
                   <li className="pl-3 lg:pl-0">
                     <span className="font-bold">110,000 sq ft</span> expansion
                     surrounded by beautiful conservation land
@@ -169,7 +169,7 @@ export default function Homepage() {
           </div>
         </div>
 
-        <div className="block relative mt-0 lg:-mt-268px z-10">
+        <div className="block relative mt-0 lg:-mt-195px 2xl:-mt-268px z-10">
           <img
             className="hidden lg:block relative w-full"
             src="/images/fit_woman.png"
@@ -178,15 +178,15 @@ export default function Homepage() {
             className="block lg:hidden"
             src="/images/fit_woman_mobile2.png"
           />
-          <div className="absolute top-325px px-9 lg:px-0 left-0 lg:left-260px z-10 text-white max-w-3xl text-center lg:text-left">
+          <div className="absolute top-325px lg:top-185px 2xl:top-325px px-9 lg:px-0 left-0 lg:left-50px 2xl:left-260px z-10 text-white max-w-3xl lg:max-w-2xl 2xl:max-w-3xl text-center lg:text-left">
             <h2 className="text-24px lg:text-36px font-medium">
               JCC Membership Benefits
             </h2>
-            <h3 className="text-17px lg:text-26px leading-24px lg:leading-41px mb-10">
+            <h3 className="text-17px lg:text-26px leading-24px lg:leading-41px mb-10 lg:mb-15px 2xl:mb-10">
               Check out all of our awesome member perks: <br />
               We Benefit Together.
             </h3>
-            <ul className="leading-25px lg:leading-10 mb-4 text-14px lg:text-18px tracking-0.27px lg:tracking-0.35px text-left">
+            <ul className="leading-25px lg:leading-25px 2xl:leading-10 mb-4 text-14px lg:text-18px tracking-0.27px lg:tracking-0.35px text-left">
               <li
                 className="bg-no-repeat bg-27px lg:bg-42px pl-45px lg:pl-55px min-h-50px"
                 style={{
@@ -298,7 +298,7 @@ export default function Homepage() {
             The JCC Legacy Today!
           </h2>
 
-          <div className="text-grayish-1 w-full lg:w-955px text-14px lg:text-18px leading-30px tracking-0.15px mx-auto">
+          <div className="text-grayish-1 w-full lg:w-900px 2xl:w-955px text-14px lg:text-18px leading-30px tracking-0.15px mx-auto">
             <p>
               The JCC family is waiting for you! At the SRC, we’re re-opening
               our doors this summer and we want you to be a part of the

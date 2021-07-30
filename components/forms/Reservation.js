@@ -136,7 +136,7 @@ export default function Reservation(props) {
   function onReCAPTCHAChange() {}
 
   return (
-    <form className="max-w-1530px mx-auto mt-5 lg:mt-14" id="reserve_form">
+    <form className="max-w-1530px w-full lg:w-1000px 2xl:w-full mx-auto mt-5 lg:mt-14" id="reserve_form">
       <div className="flex flex-wrap text-left mb-4">
         <div className="w-full lg:w-1/3 px-2 mb-2 lg:mb-0">
           <div className="flex flex-col">
