@@ -31,7 +31,7 @@ export default function Footer() {
       <div className="bg-grayish-3">
         <div className="hidden lg:flex max-w-6xl flex-wrap justify-between mx-auto py-6">
           <div>
-            <a href="https://www.prossermanjcc.com/">
+            <a href="https://www.prossermanjcc.com/" target="_blank">
               <img
                 className="max-h-10"
                 src="https://join.prossermanjcc.com/custom/pjcc-reserve-spot/images/prosserman.png"
@@ -39,16 +39,16 @@ export default function Footer() {
             </a>
           </div>
           <div className="flex">
-            <a href="https://www.facebook.com/theprossermanjcc/">
+            <a href="https://www.facebook.com/theprossermanjcc/" target="_blank">
               <img className="max-h-10 px-2" src="/images/SRC-LOGO.png" />
             </a>
-            <a href="https://www.facebook.com/schwartzreismancentre/">
+            <a href="https://www.facebook.com/schwartzreismancentre/" target="_blank">
               <img
                 className="max-h-10 px-2"
                 src="https://join.prossermanjcc.com/custom/pjcc-reserve-spot/images/facebook.png"
               />
             </a>
-            <a href="https://www.instagram.com/jcctoronto/">
+            <a href="https://www.instagram.com/jcctoronto/" target="_blank">
               <img
                 className="max-h-10 px-2"
                 src="https://join.prossermanjcc.com/custom/pjcc-reserve-spot/images/instagram.png"
@@ -56,7 +56,7 @@ export default function Footer() {
             </a>
           </div>
           <div>
-            <a href="http://www.jewishtoronto.com/">
+            <a href="http://www.jewishtoronto.com/" target="_blank">
               <img
                 className="max-h-10"
                 src="https://join.prossermanjcc.com/custom/pjcc-reserve-spot/images/UJA_Federation_White.png"

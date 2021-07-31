@@ -14,7 +14,6 @@ export default function Reservation(props) {
   const [PhoneError, setPhoneError] = useState("");
 
   function onFormSubmit() {
-    props.onClick();
 
     setDisableForm(true);
 
@@ -50,6 +49,8 @@ export default function Reservation(props) {
             body: urlencoded,
             redirect: "follow",
           };
+
+          props.onClick();
 
           fetch(
             "https://join.srcentre.ca/api/src-membership?fullname=" +
@@ -136,33 +137,40 @@ export default function Reservation(props) {
   function onReCAPTCHAChange() {}
 
   return (
-    <form className="max-w-1530px w-full lg:w-1000px 2xl:w-full mx-auto mt-5 lg:mt-14" id="reserve_form">
+    <form
+      className="max-w-1530px mx-auto
+      w-full xl:w-1000px 2xl:w-full 
+      mt-5 lg:mt-14"
+      id="reserve_form"
+    >
       <div className="flex flex-wrap text-left mb-4">
-        <div className="w-full lg:w-1/3 px-2 mb-2 lg:mb-0">
+        <div className="w-full xl:w-1/3 px-2 mb-2 lg:mb-0">
           <div className="flex flex-col">
             <label className="text-30px mb-2">Name*</label>
             <input
               ref={NameRef}
               type="text"
+              maxLength="75"
               className="bg-grayish-2 border-1 border-grayish-1 rounded py-3 px-4"
               disabled={DisableForm}
             />
             <div className="text-red-700 text-center">{NameError}&nbsp;</div>
           </div>
         </div>
-        <div className="w-full lg:w-1/3 px-2 mb-2 lg:mb-0">
+        <div className="w-full xl:w-1/3 px-2 mb-2 lg:mb-0">
           <div className="flex flex-col">
             <label className="text-30px mb-2">Email*</label>
             <input
               ref={EmailRef}
               type="email"
+              maxLength="75"
               className="bg-grayish-2 border-1 border-grayish-1 rounded py-3 px-4"
               disabled={DisableForm}
             />
             <div className="text-red-700 text-center">{EmailError}&nbsp;</div>
           </div>
         </div>
-        <div className="w-full lg:w-1/3 px-2 mb-2 lg:mb-0">
+        <div className="w-full xl:w-1/3 px-2 mb-2 lg:mb-0">
           <div className="flex flex-col">
             <label className="text-30px mb-2">Phone</label>
             <input
@@ -185,12 +193,12 @@ export default function Reservation(props) {
           onChange={onReCAPTCHAChange}
         /> */}
       </div>
-      <div className="my-16 lg:my-24 px-2">
+      <div className="my-16 xl:my-24 px-2">
         <button
           disabled={DisableForm}
           onClick={onFormSubmit}
           href="#reserve_form"
-          className="text-18px lg:text-29px bg-blueish-1 rounded text-white px-12 py-4 w-full lg:w-max block lg:inline text-center"
+          className="text-18px xl:text-29px bg-blueish-1 rounded text-white px-12 py-4 w-full xl:w-max block lg:inline text-center hover:bg-gray-900 hover:bg-opacity-30"
         >
           {props.btnText}
         </button>
