@@ -14,6 +14,7 @@ export default function Reservation(props) {
   const [PhoneError, setPhoneError] = useState("");
 
   function onFormSubmit() {
+    event.preventDefault();
 
     setDisableForm(true);
 
@@ -34,12 +35,15 @@ export default function Reservation(props) {
 
     if (name === "") {
       setNameError("Please fill in your name");
+      setDisableForm(false);
     } else {
       if (email === "") {
         setEmailError("Please fill in your email");
+        setDisableForm(false);
       } else {
         if (!validateEmail(email)) {
           setEmailError("Please enter a valid email");
+          setDisableForm(false);
         } else {
           addRegistration(registrationData);
 

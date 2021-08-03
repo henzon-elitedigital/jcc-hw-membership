@@ -415,7 +415,7 @@ export default function Homepage() {
             <Reservation
               onSuccessReservation={showSuccessMessage}
               onClick={showLoading}
-              btnText="Join the JCC Family"
+              btnText="Join the JCC Family!"
               registrationFrom="src"
             />
           </div>
@@ -439,7 +439,7 @@ export default function Homepage() {
                   Call us today to book your appointment:
                 </strong>
                 <p>
-                  <a href="tel:905-303-1821" className="text-2xl lg:text-3xl">
+                  <a href="tel:905-303-1821" className="text-2xl lg:text-3xl hover:underline">
                     905-303-1821
                   </a>
                 </p>
