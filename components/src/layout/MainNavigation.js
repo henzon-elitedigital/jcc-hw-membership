@@ -13,12 +13,12 @@ export default function MainNavigation() {
           <ul className="flex flex-row">
             <li className="px-2">
               <a href="https://www.facebook.com/schwartzreismancentre/" target="_blank">
-                <img className="w-36px lg:w-42px h-36px lg:h-42px" src="/images/facebook.png"></img>
+                <img className="w-36px lg:w-42px h-36px lg:h-42px hover:opacity-70" src="/images/facebook.png"></img>
               </a>
             </li>
             <li className="px-2">
               <a href="https://www.instagram.com/jcctoronto/" target="_blank">
-                <img className="w-36px lg:w-42px h-36px lg:h-42px" src="/images/instagram.png"></img>
+                <img className="w-36px lg:w-42px h-36px lg:h-42px hover:opacity-70" src="/images/instagram.png"></img>
               </a>
             </li>
           </ul>

@@ -33,24 +33,24 @@ export default function Footer() {
           <div>
             <a href="https://www.prossermanjcc.com/" target="_blank">
               <img
-                className="max-h-10"
+                className="max-h-10 hover:opacity-70"
                 src="https://join.prossermanjcc.com/custom/pjcc-reserve-spot/images/prosserman.png"
               />
             </a>
           </div>
           <div className="flex">
             <a href="https://www.facebook.com/theprossermanjcc/" target="_blank">
-              <img className="max-h-10 px-2" src="/images/SRC-LOGO.png" />
+              <img className="max-h-10 px-2 hover:opacity-70" src="/images/SRC-LOGO.png" />
             </a>
             <a href="https://www.facebook.com/schwartzreismancentre/" target="_blank">
               <img
-                className="max-h-10 px-2"
+                className="max-h-10 px-2 hover:opacity-70"
                 src="https://join.prossermanjcc.com/custom/pjcc-reserve-spot/images/facebook.png"
               />
             </a>
             <a href="https://www.instagram.com/jcctoronto/" target="_blank">
               <img
-                className="max-h-10 px-2"
+                className="max-h-10 px-2 hover:opacity-70"
                 src="https://join.prossermanjcc.com/custom/pjcc-reserve-spot/images/instagram.png"
               />
             </a>
@@ -58,7 +58,7 @@ export default function Footer() {
           <div>
             <a href="http://www.jewishtoronto.com/" target="_blank">
               <img
-                className="max-h-10"
+                className="max-h-10 hover:opacity-70"
                 src="https://join.prossermanjcc.com/custom/pjcc-reserve-spot/images/UJA_Federation_White.png"
               />
             </a>
